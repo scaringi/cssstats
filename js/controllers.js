@@ -1,4 +1,4 @@
-// Controllers
+ // Controllers
 
 
 rprtr.controller('GlobalCtrl',
@@ -59,8 +59,11 @@ rprtr.controller('PaddingCtrl', ['$scope', 'anythingToRelative', function($scope
 }]);
 
 rprtr.controller('WidthCtrl', ['$scope', '$filter', 'anythingToRelative', function($scope, anythingToRelative, $filter){
-  var widthFilter = $filter('unique');
+
+  $scope.widthSizes = widths;
   anythingToRelative($scope.widths);
+
+  var widthFilter = $filter('unique');
   $scope.uniqueWidthSizes = widthFilter($scope.widthSizes);
 }]);
 
