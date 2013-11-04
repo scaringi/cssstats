@@ -47,7 +47,7 @@ rprtr.controller('GlobalCtrl',
 
 rprtr.controller('HomeCtrl', ['$scope', function($scope) {
   console.log('HomeCtrl');
-    
+
 }]);
 
 rprtr.controller('MarginCtrl', ['$scope', 'anythingToRelative', function($scope, anythingToRelative){
@@ -58,8 +58,10 @@ rprtr.controller('PaddingCtrl', ['$scope', 'anythingToRelative', function($scope
   anythingToRelative($scope.paddings);
 }]);
 
-rprtr.controller('WidthCtrl', ['$scope', 'anythingToRelative', function($scope, anythingToRelative){
+rprtr.controller('WidthCtrl', ['$scope', '$filter', 'anythingToRelative', function($scope, anythingToRelative, $filter){
+  var widthFilter = $filter('unique');
   anythingToRelative($scope.widths);
+  $scope.uniqueWidthSizes = widthFilter($scope.widthSizes);
 }]);
 
 rprtr.controller('HeightCtrl', ['$scope', 'anythingToRelative', function($scope, anythingToRelative){
@@ -77,7 +79,7 @@ rprtr.controller('DeclarationsCtrl', ['$scope', function($scope){
 
 rprtr.controller('ParserCtrl', ['$scope', '$http', '$filter', 'declarations', function($scope, $http, $filter, declarations){
 
-  // Controller for parsing the base JSON data and spitting out 
+  // Controller for parsing the base JSON data and spitting out
   // declarations and unique_declarations
 
   $scope.styleDataToParse = null;

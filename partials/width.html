@@ -1,10 +1,12 @@
 <div ng-controller="WidthCtrl" class="phl pvm">
+    <a href="" ng-click="showAll=true">All ({{ widthSizes.length }})</a>
+    |
+    <a href="" ng-click="showAll=false">Unique ({{ uniqueWidthSizes.length}})</a>
   <h1>Widths ({{ widths.length }})</h1>
   <ul>
     <li ng-repeat="width in widths | orderBy:'relativeValue'" class="mbm">
         <span class="db sans-serif ltgry lh-2 f4">  <b class="blk">{{ width.value }}</b></span>
         <div style="width: {{ width.relativeValue }}%; outline: 1px solid #222; height: 3rem;">
-          <!-- <pre>{{ width.relativeValue }}</pre> -->
         </div>
     </li>
   </ul>
