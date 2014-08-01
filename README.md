@@ -10,7 +10,7 @@ Install [node.js](http://nodejs.org) and then open Terminal:
 
 ## Project Setup
 
-    git clone git@github.com:mrmrs/cssstats.git
+    git clone https://github.com/mrmrs/cssstats.git
     cd cssstats
     npm install
     grunt build:debug
